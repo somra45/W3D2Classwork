@@ -1,6 +1,6 @@
-require "/.board.rb"
 
 class Card
+    ARR = ('A'..'Z').to_a
 
     def initialize(letter)
         @letter = letter
@@ -15,9 +15,8 @@ class Card
         @face_up
     end
 
-    def card_value
-        arr = ('A'..'Z').split("")
-        @letter = arr.sample
+    def self.card_value
+        ARR.sample
     end
 
     def display
@@ -43,5 +42,18 @@ class Card
             return false
         end
     end 
+
+    def self.shuffle(num_pairs)
+        array_of_pairs = []
+        count = 0
+        while count < num_pairs
+            pair_letter = self.card_value
+            2.times do 
+                array_of_pairs << Card.new(pair_letter)
+            end
+            count += 1
+        end
+        array_of_pairs.shuffle!
+    end
 end
 
