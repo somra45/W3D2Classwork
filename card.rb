@@ -32,6 +32,15 @@ class Card
         @face_up = false
     end
 
-    
+    def reveal
+        @face_up = true
+    end
 
+    def ==(card)
+        if self.letter == card.letter
+            return true
+        else
+            return false
+        end
+    end 
 end
