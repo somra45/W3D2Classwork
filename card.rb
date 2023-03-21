@@ -4,7 +4,7 @@ class Card
 
     def initialize(letter)
         @letter = letter
-        @face_up = true
+        @face_up = false
     end
 
     def letter
