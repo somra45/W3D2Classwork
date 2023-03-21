@@ -45,4 +45,3 @@ class Card
     end 
 end
 
-"hi"
